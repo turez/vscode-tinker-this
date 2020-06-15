@@ -19,7 +19,41 @@
 				"command": "tinker-this.runSelection",
 				"title": "Tinker this"
 			}
-		]
+		],
+		"keybindings": [
+            {
+                "key": "cmd+k cmd+t",
+                "command": "tinker-this.runSelection"
+			}
+		],
+		"configuration": {
+            "title": "Tinker This configuration",
+            "properties": {
+                "tinker-this.phpPath": {
+                    "type": [
+                        "string"
+                    ],
+                    "default": "php",
+                    "description": "Php executable path in use for your project. Also compatible with docker as \"docker-compose exec -T php-fpm php\""
+				}
+			}
+		},
+		"taskDefinitions": [
+            {
+                "type": "thinker-this",
+                "required": [
+                    "task"
+				],
+				
+                "properties": {
+                    "task": {
+                        "type": "string",
+                        "description": "The task to execute"
+                    }
+                }
+            }
+        ]
+
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
