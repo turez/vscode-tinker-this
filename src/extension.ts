@@ -13,7 +13,7 @@ export function activate(context: vscode.ExtensionContext) {
 			let command = getConsoleCommand();
 			if (command === null) {
 				vscode.window.showInformationMessage('The tinker command is not available');
-				return undefined;
+				return;
 			}
 			return [new vscode.Task(
 				{ type: "tinker-this", task: "run" },
@@ -24,26 +24,31 @@ export function activate(context: vscode.ExtensionContext) {
 			)];
 		},
 		resolveTask(_task: vscode.Task): vscode.Task | undefined {
-			return undefined;
+			return;
 		}
 	}));
 
 	function getConsoleCommand() {
 		const php = vscode.workspace.getConfiguration('tinker-this').get('phpPath');
-		const code = getSelectedCode();
+		const code = getCode();
 		if (code === undefined || code === null || code === "") {
 			return null;
 		}
 
-		return "echo '" + getSelectedCode() + "'|" + php + ' artisan tinker';
+		return "echo '" + getCode() + "'|" + php + ' artisan tinker';
 	}
 
-	function getSelectedCode() {
+	function getCode() {
 		const editor = vscode.window.activeTextEditor;
 		if (editor !== undefined) {
 			let selection = editor.selection;
-			let text = editor.document.getText(selection);
+
+			let text =
+				selection === undefined || selection.anchor.isEqual(selection.active) ?
+					editor.document.getText() : editor.document.getText(selection);
+
 			return text
+				.replace(/<\?php/, '')
 				.replace(/\r?\n/g, '')
 				.replace(/\ +/g, ' ')
 				.replace(/'+/g, '"');
