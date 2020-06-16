@@ -1,8 +1,15 @@
 {
 	"name": "tinker-this",
-	"displayName": "tinker-this",
+	"displayName": "Tinker This",
 	"description": "Run the selected code with Laravel Tinker",
-	"version": "0.0.1",
+	"version": "0.1.0",
+	"publisher": "carlboo",
+	"icon": "icon.png",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/carlboo/tinker-this"
+	},
 	"engines": {
 		"vscode": "^1.40.0"
 	},
@@ -21,39 +28,37 @@
 			}
 		],
 		"keybindings": [
-            {
-                "key": "cmd+k cmd+t",
-                "command": "tinker-this.runSelection"
+			{
+				"key": "cmd+k cmd+t",
+				"command": "tinker-this.runSelection"
 			}
 		],
 		"configuration": {
-            "title": "Tinker This configuration",
-            "properties": {
-                "tinker-this.phpPath": {
-                    "type": [
-                        "string"
-                    ],
-                    "default": "php",
-                    "description": "Php executable path in use for your project. Also compatible with docker as \"docker-compose exec -T php-fpm php\""
+			"title": "Tinker This configuration",
+			"properties": {
+				"tinker-this.phpPath": {
+					"type": [
+						"string"
+					],
+					"default": "php",
+					"description": "Php executable path in use for your project. Also compatible with docker as \"docker-compose exec -T php-fpm php\""
 				}
 			}
 		},
 		"taskDefinitions": [
-            {
-                "type": "thinker-this",
-                "required": [
-                    "task"
+			{
+				"type": "tinker-this",
+				"required": [
+					"task"
 				],
-				
-                "properties": {
-                    "task": {
-                        "type": "string",
-                        "description": "The task to execute"
-                    }
-                }
-            }
-        ]
-
+				"properties": {
+					"task": {
+						"type": "string",
+						"description": "The task to execute"
+					}
+				}
+			}
+		]
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
