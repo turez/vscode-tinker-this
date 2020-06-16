@@ -5,6 +5,7 @@ export function activate(context: vscode.ExtensionContext) {
 	let disposables = [];
 
 	disposables.push(vscode.commands.registerCommand('tinker-this.runSelection', async () => {
+		await vscode.commands.executeCommand('workbench.action.terminal.clear');
 		await vscode.commands.executeCommand('workbench.action.tasks.runTask', 'tinker-this: run');
 	}));
 
