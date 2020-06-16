@@ -2,6 +2,8 @@
 
 VS Code extension for  the selected code with Laravel Tinker
 
+![Demo GIF](demo.gif)
+
 ## Features
 
 Executes php code easily with Laravel Tinker for debugging or testing from your editor
