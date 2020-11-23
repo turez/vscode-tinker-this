@@ -36,7 +36,7 @@ export function activate(context: vscode.ExtensionContext) {
 			return null;
 		}
 
-		return "echo '" + getCode() + "'|" + php + ' artisan tinker';
+		return 'echo "' + getCode() + '"|' + php + ' artisan tinker';
 	}
 
 	function getCode() {
@@ -52,7 +52,7 @@ export function activate(context: vscode.ExtensionContext) {
 				.replace(/<\?php/, '')
 				.replace(/\r?\n/g, '')
 				.replace(/\ +/g, ' ')
-				.replace(/'+/g, '"');
+				.replace(/"+/g, '\\"');
 		}
 	}
 
