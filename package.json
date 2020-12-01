@@ -2,7 +2,7 @@
 	"name": "tinker-this",
 	"displayName": "Tinker This",
 	"description": "Run the selected code with Laravel Tinker",
-	"version": "0.2.1",
+	"version": "0.2.3",
 	"publisher": "carlboo",
 	"icon": "icon.png",
 	"license": "MIT",
