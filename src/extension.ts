@@ -52,7 +52,8 @@ export function activate(context: vscode.ExtensionContext) {
 				.replace(/<\?php/, '')
 				.replace(/\r?\n/g, '')
 				.replace(/\ +/g, ' ')
-				.replace(/"+/g, '\\"');
+				.replace(/"+/g, '\\"')
+				.replace(/\$+/g, "\\$");
 		}
 	}
 
