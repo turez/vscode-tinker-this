@@ -1,15 +1,16 @@
 # Tinker This VS Code Extension
 
-VS Code extension for running part of your code with Laravel Tinker
+VS Code extension to run the selected code with Laravel Tinker
 
 ![Demo GIF](demo.gif)
 
 ## Features
 
-Executes php code easily with Laravel Tinker for debugging or testing from your editor
+Executes php code with default Laravel Tinker, allowing to debug or test a small part of the code easily from your editor.
+
 It allows:
-- Select the code from any file that you want to executer in tinker
-- Run the current open file, with no need to save the file on the disk
+- Run the selected code in the editor
+- Run the current open file, when no selection is made
 
 ## Extension Settings
 
@@ -32,5 +33,4 @@ Solve some issues when combining quoted and single quoted strings in the execute
 
 -----------------------------------------------------------------------------------------------------------
 
-Support the package reporting issues or new idas on github :pray:
-**Enjoy it!**
+Support the package reporting issues or new ideas on github!

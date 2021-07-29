@@ -2,13 +2,13 @@
 	"name": "tinker-this",
 	"displayName": "Tinker This",
 	"description": "Run the selected code with Laravel Tinker",
-	"version": "0.2.3",
+	"version": "0.2.4",
 	"publisher": "carlboo",
 	"icon": "icon.png",
 	"license": "MIT",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/carlboo/vscode-tinker-this"
+		"url": "https://github.com/turez/vscode-tinker-this"
 	},
 	"engines": {
 		"vscode": "^1.40.0"
