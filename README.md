@@ -14,7 +14,7 @@ It allows:
 
 ## Extension Settings
 
-* `myExtension.phpPath`: set the path to your php executable. It supports docker as `docker-compose exec -T php-fpm php`
+* `tinker-this.phpPath`: set the path to your php executable. It supports docker as `docker-compose exec -T php-fpm php`
 
 ## Known Issues
 
